@@ -1,27 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+  .bg-hero {
+    background: linear-gradient(0deg, rgba(15, 66, 41, 0.70) 0%, rgba(15, 66, 41, 0.70) 100%), url('/img/hero/background-hero.png');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .bg-our-services {
+    background: linear-gradient(0deg, rgba(15, 66, 41, 0.70) 0%, rgba(15, 66, 41, 0.70) 100%), url('/img/ourServices/ourservices-img.png');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .bg-register {
+    background: linear-gradient(42deg, rgba(15, 66, 41, 0.40) 0%, rgba(83, 148, 7, 0.40) 100%), url('/img/register/bg-img-register.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .bg-login {
+    background: url('/img/login/bg-leaf.svg'), url('/img/login/bg-ellipses.svg'),linear-gradient(42deg, #0F4229 0%, #539407 100%);
+    background-size: 128px, 200px, cover;
+    background-position: center left, bottom left, center;
+    background-repeat: no-repeat;
+  }
+
+  .custom-shadow {
+    box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.10);
+  }
+  
+  @media screen and (max-width: 768px) {
+    .bg-our-services {
+      background-size: 100% 100%;
+    }
+  }
+
+  @layer base {
+
+    .btn {
+      @apply px-6 py-[10px] rounded-full
+    }
+  
+    .section {
+      @apply px-10 lg:px-[110px]
+    }
+  
+    .hero-title {
+      @apply text-[36px] lg:text-[84px] font-jost font-medium leading-[110%] text-white
+    }
+  
+    .section-subtitle {
+      @apply font-rubik font-light uppercase text-[18px] lg:text-[22px]
+    }
+  
+    .section-title {
+      @apply font-jost font-medium lg:text-[48px] !m-0 
+    }
+  
+    .input {
+      @apply px-2 rounded-full bg-transparent focus:outline-none focus:ring-2 focus:ring-transparent focus:border-transparent
+    }
+  
+    .input::placeholder {
+      @apply text-white font-rubik font-light text-[14px]
+    }
+  
+    .input-register {
+      @apply bg-primary-light-green h-[60px] pl-6 text-primary-dark-green font-rubik first-letter:outline-none w-full text-[15px] rounded-2xl focus:ring-primary-dark-green focus:border-primary-dark-green focus:outline-1
+    }
+  
+    .input-register::placeholder {
+      @apply text-primary-dark-green font-rubik font-light
+    }
+
+    .input-modal {
+      @apply bg-white h-[50px] pl-6 text-primary-green font-rubik first-letter:outline-none w-full text-[15px] rounded-2xl focus:ring-primary-dark-green focus:border-primary-dark-green focus:outline-1
+    }
+
+    .input-modal::placeholder {
+      @apply text-primary-green font-normal font-rubik
+    }
+  
+  }
