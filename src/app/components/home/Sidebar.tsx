@@ -8,7 +8,7 @@ import Link from 'next/link'
 import { LuLayoutDashboard, LuLogOut } from 'react-icons/lu'
 import {PiSuitcase} from 'react-icons/pi'
 import {AiOutlineHeart, AiOutlinePlus} from 'react-icons/ai'
-import { SidebarProps } from '@/types/Index'
+import { SidebarProps } from '@/app/types/Index'
 import { signOut } from 'next-auth/react'
 
 

@@ -1,6 +1,7 @@
 import { getSession, useSession } from 'next-auth/react'
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react';
+import EditUserModal from '../modals/EditUserModal';
 
 // import { User } from '@/pages/api/getCurrentUser';
 // import EditUserModal from '../modals/EditUserModal';
@@ -56,15 +57,13 @@ const Dashboard = () => {
 
               <button className="flex justify-between items-center space-x-4 px-4 bg-primary-light-green h-[60px] text-primary-blue w-full text-[14px] rounded-2xl font-outfit font-light">
                 Rôle
+                <img src="/img/home/pen-2.svg" alt="icon pen" />
               </button>
 
-              {/* <button className="flex justify-between items-center space-x-4 px-4 bg-primary-light-green h-[60px] text-primary-blue w-full text-[14px] rounded-2xl font-outfit font-light">
-                  ********
-                  <img src="/img/home/pen-2.svg" alt="icon pen" />
-              </button> */}
-              {/* {
-                showEditModal && <EditUserModal onClose={closeEditModal} session={session?.data} />
-              } */}
+             
+              {
+                showEditModal && <EditUserModal onClose={closeEditModal}  />
+              }
         </div>         
               
               
