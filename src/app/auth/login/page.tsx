@@ -1,4 +1,5 @@
 import Input from '@/app/components/forms/Input'
+import LoginForm from '@/app/components/forms/LoginForm'
 import Footer from '@/app/components/website/Footer'
 import Header from '@/app/components/website/Header'
 import React from 'react'
@@ -40,29 +41,7 @@ const page = () => {
           <div className="border-t-2 border-primary-dark-green flex-grow"></div>
         </div>
 
-        {/* form */}
-        <form className="space-y-8 w-full">
-
-          <Input
-            id="email"
-            type="email"
-            label="Email"
-            placeholder="Email"
-            
-          />
-          <Input
-            id="password"
-            type="password"
-            label="Password"
-            placeholder="Mot de passe"
-            
-          />
-
-          <button type='submit' className="btn rounded-xl bg-primary-green hover:bg-primary-dark-green transition-colors duration-500 font-jost text-white">
-            Se connecter
-          </button>
-
-        </form>
+        <LoginForm />
       </div>
     </div>
   </section>

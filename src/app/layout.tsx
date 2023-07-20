@@ -1,6 +1,7 @@
 import AuthContext from './context/AuthContext'
 import './globals.css'
 import type { Metadata } from 'next'
+import ToasterContext from './context/ToastContext'
 
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function RootLayout({
     <html lang="fr">
       <body>
         <AuthContext>
+          <ToasterContext />
         {children}
         </AuthContext>
       </body>
