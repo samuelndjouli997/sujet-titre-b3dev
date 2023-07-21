@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import React, { useState } from 'react'
 import { AiFillEye, AiFillEyeInvisible, AiOutlineCaretDown } from 'react-icons/ai';
 
-export default function Input({id,
+export default function InputModal({id,
     label,
     type,
     placeholder,
@@ -37,10 +37,7 @@ export default function Input({id,
           "bg-red-200": error,
           "border-transparent": !error,
         },
-        "bg-primary-light-green",
-        "px-2",
-        "py-2",
-        "outline-none",
+        "input-modal",
         className
       );
     

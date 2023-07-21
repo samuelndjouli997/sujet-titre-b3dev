@@ -9,7 +9,7 @@ const page = () => {
 
   return (
     <div className="flex min-h-screen w-full flex-col">
-        <HomeContent />
+        {/* <HomeContent /> */}
     
     </div>
   )

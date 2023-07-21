@@ -2,13 +2,19 @@ import { getSession, useSession } from 'next-auth/react'
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react';
 import EditUserModal from '../modals/EditUserModal';
-
+import { User } from "@prisma/client";
 // import { User } from '@/pages/api/getCurrentUser';
 // import EditUserModal from '../modals/EditUserModal';
 
+interface DashboardEditProps {
+  // openEditModal: () => void,
+  currentUser: User | null;
+}
 
-const Dashboard = () => {
-  const { data: session } = useSession();
+const DashboardEdit = ({currentUser}: DashboardEditProps) => {
+  console.log(currentUser)
+
+  
 
   const [showEditModal, setShowEditModal] = useState(false);
 
@@ -16,10 +22,25 @@ const Dashboard = () => {
     setShowEditModal(true);
   };
 
-  const closeEditModal = (): void => {
+  const closeEditModal = () => {
     setShowEditModal(false);
   };
 
+  const handleRoles = () => {
+
+    if (currentUser?.role === "SELLER") {
+      return<>Acheteur</>
+    }
+
+    if (currentUser?.role === "BUYER") {
+      return<>Acheteur</>
+    }
+    if (currentUser?.role === "BOTH") {
+      return<>Les 2</>
+    }
+  }
+
+  
 
 
   return (
@@ -27,17 +48,14 @@ const Dashboard = () => {
     <>
         <div className="section lg:pt-14 lg:pb-20 flex flex-col w-8/12 mx-auto space-y-4 col-span-3">
         
-              {session?.user ? ( // Vérification de nullité ici
-                  <h2 className="font-jost font-medium text-lg lg:text-[25px] text-dark mb-4">
-                    Salut, {session.user.name} ! Ici tu pourras consulter et modifier toutes les informations liées à ton profil
-                                  </h2>
-                                ) : null}
+        {currentUser ? (
+          <h2 className="font-jost font-medium text-lg lg:text-[25px] text-dark mb-4">
+            Salut, {currentUser?.name} ! Ici tu pourras consulter et modifier toutes les informations liées à ton profil
+          </h2>
+        ) : null}
               <div className="mb-20 flex flex-col justify-center items-center">
-              {session?.user?.image ? ( // Vérifiez si l'utilisateur a une photo de profil
-                  <Image src={session.user.image} alt="avatar" width={148} height={148} />
-                ) : (
-                  <Image src="/img/home/user-img.webp" alt="avatar" width={148} height={148} /> // Affichez l'image par défaut si l'utilisateur n'a pas de photo de profil
-                )}
+              <Image src={currentUser?.image || "/img/placeholder.webp"} className="rounded-full" alt="avatar" width={148} height={148} />
+
                     <button onClick={openEditModal} className="flex space-x-2 bg-white rounded-full custom-shadow cursor-pointer -mt-4 py-3 px-6">
                         <Image src="/img/home/camera.svg" alt="camera" width={20} height={20} />
                         <span>Modifier ma photo</span>
@@ -46,24 +64,26 @@ const Dashboard = () => {
 
               
                 <button onClick={openEditModal}  className="flex justify-between items-center space-x-4 px-4 bg-primary-light-green h-[60px] text-primary-blue w-full text-[14px] rounded-2xl font-outfit font-light">
-                    {session?.user?.name}
+                  {currentUser?.name}
                   <img src="/img/home/pen-2.svg" alt="icon pen" />
                 </button>
 
               
               <button className="flex justify-between items-center space-x-4 px-4 bg-primary-light-green h-[60px] text-primary-blue w-full text-[14px] rounded-2xl font-outfit font-light">
-                {session?.user?.email}
+                  {currentUser?.email}
               </button>
 
               <button className="flex justify-between items-center space-x-4 px-4 bg-primary-light-green h-[60px] text-primary-blue w-full text-[14px] rounded-2xl font-outfit font-light">
-                Rôle
+                Rôle : {handleRoles()}
                 <img src="/img/home/pen-2.svg" alt="icon pen" />
               </button>
 
-             
-              {
-                showEditModal && <EditUserModal onClose={closeEditModal}  />
-              }
+              {showEditModal && (
+                <EditUserModal
+                currentUser={currentUser}
+                onClose={closeEditModal}
+                /> )}
+              
         </div>         
               
               
@@ -71,4 +91,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default DashboardEdit

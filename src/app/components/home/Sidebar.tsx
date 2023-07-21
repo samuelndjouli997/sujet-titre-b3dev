@@ -8,13 +8,18 @@ import Link from 'next/link'
 import { LuLayoutDashboard, LuLogOut } from 'react-icons/lu'
 import {PiSuitcase} from 'react-icons/pi'
 import {AiOutlineHeart, AiOutlinePlus} from 'react-icons/ai'
+import {BiCog} from 'react-icons/bi'
+
+
 import { SidebarProps } from '@/app/types/Index'
 import { signOut } from 'next-auth/react'
 
 
 
 
-const Sidebar = ({mdUp, open, handleButtonClick}: SidebarProps) => {
+
+
+const Sidebar = ({mdUp, open, handleButtonClick, currentUser}: SidebarProps) => {
 
   return (
     <div className={`${open ? 'w-[270px] flex-shrink-0' : 'w-[85px]'} transition duration-300`}>
@@ -30,7 +35,7 @@ const Sidebar = ({mdUp, open, handleButtonClick}: SidebarProps) => {
                     <ul className="flex flex-col gap-2 overflow-hidden text-[#7B869C]">
                         <li>
                             <Link 
-                                href="/home"
+                                href="/dashboard"
                                 className="relative flex items-center rounded-lg px-2 py-[10px] text-lg font-medium">
                                 <div className="inline-flex flex-shrink px-0 py-1">
                                     <LuLayoutDashboard className="w-6 h-6 mr-3 group-hover:text-primary-dark-green" />
@@ -43,35 +48,47 @@ const Sidebar = ({mdUp, open, handleButtonClick}: SidebarProps) => {
                                 
                             </Link>
                         </li>
-                        <li>
-                            <Link 
-                                href=""
-                                className="relative flex items-center rounded-lg px-2 py-[10px] text-lg font-medium">
-                                <div className="inline-flex flex-shrink px-0 py-1">
-                                    <PiSuitcase className="w-6 h-6 mr-3 group-hover:text-primary-dark-green" />
-                                </div>
-                                {
-                                    open && <span className="whitespace-nowrap group-hover:text-primary-dark-green">
-                                        Mes offres  
-                                    </span>
-                                }
-                                
-                            </Link>
-                        </li>
-                        <li>
-                            <Link 
-                                href=""
-                                className="relative flex items-center rounded-lg px-2 py-[10px] text-lg font-medium">
-                                <div className="inline-flex flex-shrink px-0 py-1">
-                                    <PiSuitcase className="w-6 h-6 mr-3 group-hover:text-primary-dark-green" />
-                                </div>
-                                {
-                                    open && <span className="whitespace-nowrap group-hover:text-primary-dark-green">
-                                                Offres publiées
+                        {
+                            currentUser?.role === "SELLER" || currentUser?.role === "BOTH" ? (
+                                <li>
+                                    <Link 
+                                        href=""
+                                        className="relative flex items-center rounded-lg px-2 py-[10px] text-lg font-medium">
+                                        <div className="inline-flex flex-shrink px-0 py-1">
+                                            <PiSuitcase className="w-6 h-6 mr-3 group-hover:text-primary-dark-green" />
+                                        </div>
+                                        {
+                                            open && <span className="whitespace-nowrap group-hover:text-primary-dark-green">
+                                                Mes offres  
                                             </span>
-                                }
-                            </Link>
-                        </li>
+                                        }
+                                        
+                                    </Link>
+                                </li>
+                            ) : null
+                        }
+
+                        {
+                            currentUser?.role === "BUYER" || currentUser?.role === "BOTH" ? (
+                                <li>
+                                    <Link 
+                                        href=""
+                                        className="relative flex items-center rounded-lg px-2 py-[10px] text-lg font-medium">
+                                        <div className="inline-flex flex-shrink px-0 py-1">
+                                            <PiSuitcase className="w-6 h-6 mr-3 group-hover:text-primary-dark-green" />
+                                        </div>
+                                        {
+                                            open && <span className="whitespace-nowrap group-hover:text-primary-dark-green">
+                                                        Offres publiées
+                                                    </span>
+                                        }
+                                    </Link>
+                                </li>
+
+                            ) : null
+                        }
+                        
+                        
                         <li>
                             <Link 
                                 href=""
@@ -86,7 +103,9 @@ const Sidebar = ({mdUp, open, handleButtonClick}: SidebarProps) => {
                                 }
                             </Link>
                         </li>
-                        <li>
+                        {
+                            currentUser?.role === "SELLER" || currentUser?.role === "BOTH" ? (
+                                <li>
                             <Link 
                                 href=""
                                 className="relative flex items-center rounded-lg px-2 py-[10px] text-lg font-medium">
@@ -100,6 +119,25 @@ const Sidebar = ({mdUp, open, handleButtonClick}: SidebarProps) => {
                                 }
                             </Link>
                         </li>
+
+                            ) : null
+                        }
+
+                        <li>
+                            <Link 
+                                href={`/edit`}
+                                className="relative flex items-center rounded-lg px-2 py-[10px] text-lg font-medium">
+                                <div className="inline-flex flex-shrink px-0 py-1">
+                                    <BiCog className="w-6 h-6 mr-3 group-hover:text-primary-dark-green" />
+                                </div>
+                                {
+                                    open && <span className="whitespace-nowrap group-hover:text-primary-dark-green">
+                                                Paramètres
+                                            </span>
+                                }
+                            </Link>
+                        </li>
+                        
 
                         {/* bouton se déconnecter */}
                         <li>

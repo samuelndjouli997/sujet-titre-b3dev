@@ -43,7 +43,7 @@ const LoginForm = () => {
         }
     
         toast.success("Connexion réussie");
-        router.push("/home");
+        router.push("/dashboard");
         
       };
 

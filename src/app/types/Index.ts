@@ -1,3 +1,5 @@
+import { User } from "@prisma/client";
+
 export interface Posts {
     id: number;
     userImg: string;
@@ -20,6 +22,7 @@ export interface SidebarProps {
     mdUp: boolean;
     open: boolean;
     handleButtonClick: () => void;
+    currentUser: User | null;
 }
 
 export interface InputProps {
