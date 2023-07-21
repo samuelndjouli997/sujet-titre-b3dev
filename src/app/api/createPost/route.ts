@@ -26,7 +26,7 @@ export async function POST(request: Request) {
     }
   });
 
-  const product = await prisma.post.create({
+  const post = await prisma.post.create({
     data: {
       title,
       description,
@@ -38,5 +38,5 @@ export async function POST(request: Request) {
     },
   });
 
-  return NextResponse.json(product);
+  return NextResponse.json(post);
 }
