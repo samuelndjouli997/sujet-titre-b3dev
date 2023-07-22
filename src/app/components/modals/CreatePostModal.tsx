@@ -78,18 +78,14 @@ export default function CreatePostModal({onClose}: CreatePostModalProps) {
                 <form className="space-y-8 w-full" onSubmit={handleSubmit(onSubmit)}>
                     <div className="flex flex-col w-full">
 
-                        
-                            
                             <h3 className="section-title font-semibold text-[18px] lg:text-4xl text-white !mb-4">Poster une annonce</h3>
 
                             <div className="p-8 mb-4 lg:p-0">
-                            
                                 <label className="block mb-2 label-text">Photo du produit</label>
                                 <ImageUpload
                                     onChange={(value) => setCustomValue("image", value)}
                                     value={image}
                                 />
-                            
                             </div>
 
                             <InputModal
@@ -143,8 +139,6 @@ export default function CreatePostModal({onClose}: CreatePostModalProps) {
                                     Poster l'annonce
                                 </button>
                             </div>
-
-                        
 
                     </div>
                 </form>
