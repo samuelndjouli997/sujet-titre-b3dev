@@ -13,7 +13,7 @@ export default function InputModal({id,
     register,
     error,
     textarea = false,
-    className = "input-register",
+    className = "input-register, my-2",
     options,
     value,
     onChange,
@@ -44,7 +44,7 @@ export default function InputModal({id,
       if (type === "select" && options) {
         return (
           <div className="mb-4">
-            <label className="mb-2 block" htmlFor={id}>
+            <label className="mb-2 block label-text" htmlFor={id}>
               {label}
             </label>
             <Listbox value={value} onChange={onChange}>
@@ -111,7 +111,7 @@ export default function InputModal({id,
 
   return (
    <div className='mb-4'>
-      <label className="mb-2 block" htmlFor={id}>
+      <label className="mb-2 label-text hidden" htmlFor={id}>
         {label}
       </label>
        <div className="relative">

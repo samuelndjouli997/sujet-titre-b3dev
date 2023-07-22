@@ -58,10 +58,10 @@ export default function CreatePostModal({onClose}: CreatePostModalProps) {
 
           if (result.error) {
             toast.error("Une erreur est survenue");
-            router.push("/mes-offres");
-            router.refresh();
           } else {
             toast.success("Annonce créée avec succès");
+            router.refresh();
+            onClose();
           }
 
       }
@@ -72,26 +72,25 @@ export default function CreatePostModal({onClose}: CreatePostModalProps) {
         <div className="modal-overlay fixed inset-0 bg-gray-900 opacity-50"></div>
         <div className="modal-content mx-6 lg:mx-0 bg-primary-green rounded-lg p-2 w-[800px] transform transition-transform duration-300 ease-in-out translate-x-0">
             {/* Contenu de la fenêtre modale */}
-            <div className="p-6 lg:p-14 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 80px)' }}>
+            <div className="p-6 lg:px-14 py-10 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 80px)' }}>
                 
                 {/* form */}
                 <form className="space-y-8 w-full" onSubmit={handleSubmit(onSubmit)}>
-                    <div className="grid gap-y-4 lg:gap-x-6 lg:grid-cols-6">
+                    <div className="flex flex-col w-full">
 
-                        <div className="bg-primary-dark-green p-8 lg:p-0 col-span-3 flex flex-col justify-center items-center rounded-xl">
+                        
                             
-                            <label className="block mb-2">Photo du produit</label>
-                            <ImageUpload
-                                onChange={(value) => setCustomValue("image", value)}
-                                value={image}
-                            />
-                            
-                            
-                        </div>
+                            <h3 className="section-title font-semibold text-[18px] lg:text-4xl text-white !mb-4">Poster une annonce</h3>
 
-                        <div className="col-span-3">
+                            <div className="p-8 mb-4 lg:p-0">
                             
-                            <h3 className="section-title font-semibold text-[18px] lg:text-4xl text-white mb-8">Modifier mes informations</h3>
+                                <label className="block mb-2 label-text">Photo du produit</label>
+                                <ImageUpload
+                                    onChange={(value) => setCustomValue("image", value)}
+                                    value={image}
+                                />
+                            
+                            </div>
 
                             <InputModal
                                 id="title"
@@ -108,6 +107,15 @@ export default function CreatePostModal({onClose}: CreatePostModalProps) {
                                 label="Description de l'annonce"
                                 placeholder="Description de l'annonce"
                                 register={register("description", { required: true })}
+                                error={errors.description && "Description requise"}
+                            />
+
+                            <InputModal
+                                id="location"
+                                type="text"
+                                label="Localisation de l'annonce"
+                                placeholder="exemple : Dijon, Côte d'Or"
+                                register={register("location", { required: true })}
                                 error={errors.description && "Description requise"}
                             />
 
@@ -132,11 +140,11 @@ export default function CreatePostModal({onClose}: CreatePostModalProps) {
 
                             <div className="flex space-x-4 lg:space-x-2 justify-start mt-4">
                                 <button type="submit" className="btn bg-white text-primary-green rounded-xl font-rubik font-medium btn-lg">
-                                    Modifier
+                                    Poster l'annonce
                                 </button>
                             </div>
 
-                        </div>
+                        
 
                     </div>
                 </form>

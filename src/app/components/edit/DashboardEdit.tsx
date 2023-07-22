@@ -29,14 +29,14 @@ const DashboardEdit = ({currentUser}: DashboardEditProps) => {
   const handleRoles = () => {
 
     if (currentUser?.role === "SELLER") {
-      return<>Acheteur</>
+      return<strong className="inline font-semibold font-rubik text-primary-green">Vendeur</strong>
     }
 
     if (currentUser?.role === "BUYER") {
       return<>Acheteur</>
     }
     if (currentUser?.role === "BOTH") {
-      return<>Les 2</>
+      return<>Acheteur & Vendeur</>
     }
   }
 
@@ -54,27 +54,28 @@ const DashboardEdit = ({currentUser}: DashboardEditProps) => {
           </h2>
         ) : null}
               <div className="mb-20 flex flex-col justify-center items-center">
-              <Image src={currentUser?.image || "/img/placeholder.webp"} className="rounded-full" alt="avatar" width={148} height={148} />
+                
+                <Image src={currentUser?.image || "/img/placeholder.webp"} className="rounded-full" alt="avatar" width={148} height={148} />
 
-                    <button onClick={openEditModal} className="flex space-x-2 bg-white rounded-full custom-shadow cursor-pointer -mt-4 py-3 px-6">
-                        <Image src="/img/home/camera.svg" alt="camera" width={20} height={20} />
-                        <span>Modifier ma photo</span>
-                    </button>
+                  <button onClick={openEditModal} className="flex space-x-2 bg-white rounded-full custom-shadow cursor-pointer -mt-4 py-3 px-6">
+                      <Image src="/img/home/camera.svg" alt="camera" width={20} height={20} />
+                      <span>Modifier ma photo</span>
+                   </button>
               </div>
 
               
-                <button onClick={openEditModal}  className="flex justify-between items-center space-x-4 px-4 bg-primary-light-green h-[60px] text-primary-blue w-full text-[14px] rounded-2xl font-outfit font-light">
+                <button onClick={openEditModal}  className="flex justify-between items-center space-x-4 px-4 bg-primary-light-green h-[60px] text-primary-blue w-full text-[14px] rounded-2xl font-font-rubik font-light">
                   {currentUser?.name}
                   <img src="/img/home/pen-2.svg" alt="icon pen" />
                 </button>
 
               
-              <button className="flex justify-between items-center space-x-4 px-4 bg-primary-light-green h-[60px] text-primary-blue w-full text-[14px] rounded-2xl font-outfit font-light">
+              <button className="flex justify-between items-center space-x-4 px-4 bg-primary-light-green h-[60px] text-primary-blue w-full text-[14px] rounded-2xl font-font-rubik font-light">
                   {currentUser?.email}
               </button>
 
-              <button className="flex justify-between items-center space-x-4 px-4 bg-primary-light-green h-[60px] text-primary-blue w-full text-[14px] rounded-2xl font-outfit font-light">
-                Rôle : {handleRoles()}
+              <button onClick={openEditModal} className="flex justify-between items-center space-x-4 px-4 bg-primary-light-green h-[60px] text-primary-blue w-full text-[14px] rounded-2xl font-rubik font-light">
+                <span>Rôle : {handleRoles()}</span>
                 <img src="/img/home/pen-2.svg" alt="icon pen" />
               </button>
 

@@ -93,5 +93,9 @@
     .input-modal::placeholder {
       @apply text-primary-green font-normal font-rubik
     }
+
+    .label-text {
+      @apply text-white font-rubik font-normal text-base
+    }
   
   }

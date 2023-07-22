@@ -1,4 +1,6 @@
-import React, { use, useState } from 'react'
+"use client"
+
+import React, { useState } from 'react'
 
 import { HiOutlineMenuAlt1 } from 'react-icons/hi'
 
@@ -13,13 +15,22 @@ import {BiCog} from 'react-icons/bi'
 
 import { SidebarProps } from '@/app/types/Index'
 import { signOut } from 'next-auth/react'
-
-
+import CreatePostModal from '../modals/CreatePostModal'
 
 
 
 
 const Sidebar = ({mdUp, open, handleButtonClick, currentUser}: SidebarProps) => {
+
+    const [showEditModal, setShowEditModal] = useState(false);
+
+    const openEditModal = () => {
+        setShowEditModal(true);
+      };
+    
+      const closeEditModal = () => {
+        setShowEditModal(false);
+      };
 
   return (
     <div className={`${open ? 'w-[270px] flex-shrink-0' : 'w-[85px]'} transition duration-300`}>
@@ -52,7 +63,7 @@ const Sidebar = ({mdUp, open, handleButtonClick, currentUser}: SidebarProps) => 
                             currentUser?.role === "SELLER" || currentUser?.role === "BOTH" ? (
                                 <li>
                                     <Link 
-                                        href=""
+                                        href="/mes-offres"
                                         className="relative flex items-center rounded-lg px-2 py-[10px] text-lg font-medium">
                                         <div className="inline-flex flex-shrink px-0 py-1">
                                             <PiSuitcase className="w-6 h-6 mr-3 group-hover:text-primary-dark-green" />
@@ -105,7 +116,7 @@ const Sidebar = ({mdUp, open, handleButtonClick, currentUser}: SidebarProps) => 
                         </li>
                         {
                             currentUser?.role === "SELLER" || currentUser?.role === "BOTH" ? (
-                                <li>
+                                <li onClick={openEditModal} >
                             <Link 
                                 href=""
                                 className="relative flex items-center rounded-lg px-2 py-[10px] text-lg font-medium">
@@ -158,6 +169,10 @@ const Sidebar = ({mdUp, open, handleButtonClick, currentUser}: SidebarProps) => 
             </div>
 
         </aside>
+        {showEditModal && (
+                <CreatePostModal
+                    onClose={closeEditModal}
+                /> )}
     </div>
     
   )

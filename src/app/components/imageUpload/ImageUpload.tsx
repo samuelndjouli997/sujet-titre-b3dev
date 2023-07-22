@@ -9,7 +9,7 @@ declare global {
   var cloudinary: any;
 }
 
-const uploadPreset = "qzsedazf";
+const uploadPreset = "hz53vnpv";
 
 interface ImageUploadProps {
   onChange: (value: string) => void;
@@ -44,18 +44,18 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onChange, value }) => {
               border-dashed 
               border-2 
               p-20 
-              border-neutral-300
+              border-white
               rounded-xl
               flex
               flex-col
               justify-center
               items-center
               gap-4
-              text-neutral-600
+              text-white
             "
           >
             <TbPhotoPlus size={50} />
-            <div className="font-semibold text-lg">Click to upload</div>
+            <div className="font-normal font-rubik text-white text-lg ">Téléverser un fichier</div>
             {value && (
               <div
                 className="
@@ -65,7 +65,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onChange, value }) => {
                   fill
                   style={{ objectFit: "cover" }}
                   src={value}
-                  alt="House"
+                  alt="Photo du produit"
                 />
               </div>
             )}
