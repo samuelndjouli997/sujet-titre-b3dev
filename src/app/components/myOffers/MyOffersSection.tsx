@@ -10,7 +10,7 @@ interface MyOffersSectionProps {
 
 const MyOffersSection = ({currentUser, posts}: MyOffersSectionProps) => {
   return (
-    <section className="section h-screen lg:pt-14 lg:pb-20 flex flex-col w-10/12 mx-auto space-y-4 col-span-3 text-center">
+    <section className="section lg:pt-14 lg:pb-20 flex flex-col w-10/12 mx-auto space-y-4 col-span-3 text-center">
       <h2 className="font-jost font-medium text-lg lg:text-[56px] text-center text-primary-dark-green mb-10 col-span-12">
             Mes offres 🧳
         </h2>

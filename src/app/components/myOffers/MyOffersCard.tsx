@@ -46,7 +46,7 @@ const MyOffersCard = ({key, post}: MyOffersCardProps) => {
             <p className="font-jost font-medium text-[18px] lg:text-xl text-dark">
                 {post?.price} €
             </p>
-            <p className="btn bg-primary-light-green w-fit text-primary-dark-green font-jost font-medium text-left lg:text-lg">{post?.location}</p>
+            <p className="btn rounded-2xl bg-primary-light-green w-fit text-primary-dark-green font-jost font-medium text-left lg:text-lg">{post?.location}</p>
             <p className="font-jost font-medium text-[18px] lg:text-base text-blue-ish-gray">
                 {post?.category}
             </p>

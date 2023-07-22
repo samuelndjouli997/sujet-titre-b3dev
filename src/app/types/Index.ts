@@ -1,4 +1,4 @@
-import { User } from "@prisma/client";
+import { User, Post } from "@prisma/client";
 
 export interface Posts {
     id: number;
@@ -38,3 +38,8 @@ export interface InputProps {
     className?: string;
     options?: { value: string; label: string }[];
   }
+
+export type PostWithUser = Post & {
+    user: User;
+  };
+
