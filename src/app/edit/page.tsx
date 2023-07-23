@@ -9,7 +9,7 @@ import getUser from "@/app/actions/getUser";
 
 
 
-export default async function Settings() {
+export default async function Edit() {
 
 
   const currentUser = await getCurrentUser();

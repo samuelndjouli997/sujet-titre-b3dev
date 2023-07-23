@@ -8,7 +8,7 @@ import { useState } from "react";
 import Content from "../components/dashboard/Content";
 
 
-export default async function Settings() {
+export default async function Dashboard() {
   
   const currentUser = await getCurrentUser();
 
