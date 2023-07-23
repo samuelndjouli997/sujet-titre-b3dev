@@ -1,14 +1,30 @@
+import { PostWithUser } from '@/app/types/Index';
+import { User } from '@prisma/client';
 import Image from 'next/image'
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React from 'react'
 import { BiChevronLeft } from 'react-icons/bi'
+import { BsFillTelephoneFill } from 'react-icons/bs'
 
-const OnePostContent = ({post}) => {
+interface OnePostContentProps {
+    post: PostWithUser | null;
+    currentUser: User | null;
+}
+
+const OnePostContent = ({post, currentUser}: OnePostContentProps) => {
 
     const router = useRouter();
 
     const handleGoBack = () => {
-        router.push("/mes-offres");
+
+        if (currentUser?.role === "SELLER" || currentUser?.role === "BOTH") {
+            router.push("/mes-offres");
+        }
+
+        if (currentUser?.role === "BUYER") {
+            router.push("/offres-publiees");
+        }
     };
 
   return (
@@ -18,7 +34,15 @@ const OnePostContent = ({post}) => {
                 <BiChevronLeft
                     className="text-4xl text-primary-dark-green"
                 />
-                <span className="font-jost font-medium text-lg lg:text-xl text-primary-dark-green">Revenir à mes annonces</span>
+                {
+                    currentUser?.role === "SELLER" || currentUser?.role === "BOTH" ? (
+                        <span className="font-jost font-medium text-lg lg:text-xl text-primary-dark-green">Revenir à mes offres</span>
+                    ) : currentUser?.role === "BUYER" ? (
+                        <span className="font-jost font-medium text-lg lg:text-xl text-primary-dark-green">Revenir aux offres publiées</span>
+                    ) : (
+                        <span className="font-jost font-medium text-lg lg:text-xl text-primary-dark-green">Revenir à l'accueil</span>
+                    )
+                }
             </div>
             <div>&nbsp;</div>
         </div>
@@ -35,13 +59,54 @@ const OnePostContent = ({post}) => {
                             <p className="font-rubik text-base text-primary-dark-green my-8">{post?.description}</p>
                         </div>
                     </div>
+
                     <div className="lg:col-span-3 w-full">
-                        <div className="flex flex-col space-y-2 justify-center text-left bg-primary-light-green rounded-2xl p-10">
+
+                        <div className="font-jost font-medium text-left text-lg lg:text-xl text-primary-dark-green mb-4">
+                            {
+                                currentUser?.email === post?.user?.email ? (
+                                    ""
+                                ) : (
+                                    <div className="flex justify-start space-x-2 mb-4">
+                                        <span className="font-jost font-medium text-lg lg:text-xl text-primary-dark-green">
+                                            Par
+                                        </span>
+                                        <Image src={post?.user?.image || "/img/home/user-img.webp"} alt="avatar" width={40} height={40} className="rounded-full" />
+                                        <span className="font-jost font-medium text-lg lg:text-xl text-primary-dark-green">
+                                            {post?.user?.name}
+                                        </span>
+                                
+                                    </div>
+                                )
+                                    
+                            }
+                            
+                             
+                        </div>
+                        <div className="flex flex-col space-y-2 justify-center text-left bg-primary-light-green rounded-2xl p-8">
                             <span className="font-jost font-medium text-lg lg:text-xl text-primary-dark-green">
                                 Prix : {post?.price} €
                             </span>
                             <p className="font-rubik font-medium text-base text-primary-dark-green">Localisation : {post?.location}</p>
                             <p className="font-rubik font-medium text-base text-primary-dark-green">Catégorie : {post?.category}</p>
+                        </div>
+                        <div className="flex flex-col space-y-2 justify-center text-left">
+                            <div>
+                                {
+                                    post?.user?.role === "BUYER" || post?.user?.role === "BOTH" || currentUser?.email != post?.user?.email ? (
+                                        <Link 
+                                            href={`mailto:${post.user.email}`} 
+                                            className="flex font-jost font-medium text-lg lg:text-xl text-primary-dark-green my-4">
+                                            <a>
+                                            Contactez l'acheteur 
+                                            </a>
+                                            <BsFillTelephoneFill className="inline-block ml-2 text-2xl text-primary-dark-green" />
+                                        </Link>
+                                    ) : null
+                                }
+                                
+                            </div>
+                            
                         </div>
                     </div>
         </div>

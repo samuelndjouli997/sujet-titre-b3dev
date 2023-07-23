@@ -39,6 +39,7 @@ export default function OnePost({ post, currentUser }: PostProps) {
 
                 <OnePostContent
                     post={post}
+                    currentUser={currentUser}
                 />
                 
 

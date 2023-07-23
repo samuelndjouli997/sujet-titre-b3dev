@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 // import react icons
 import { LuLayoutDashboard, LuLogOut } from 'react-icons/lu'
-import {PiSuitcase} from 'react-icons/pi'
+import {PiFolderUserFill, PiSuitcase} from 'react-icons/pi'
 import {AiOutlineHeart, AiOutlinePlus} from 'react-icons/ai'
 import {BiCog} from 'react-icons/bi'
 
@@ -40,7 +40,7 @@ const Sidebar = ({mdUp, open, handleButtonClick, currentUser}: SidebarProps) => 
                 <nav className="fixed pl-6">
                     <button
                     className="m-0 hidden h-24 items-center justify-center p-2 md:flex">
-                        <HiOutlineMenuAlt1 className="h-7 w-7 stroke-night hover:stroke-secondarylight" onClick={handleButtonClick} />
+                        <HiOutlineMenuAlt1 className="h-7 w-7 stroke-primary-green" onClick={handleButtonClick} />
                     </button>
 
                     <ul className="flex flex-col gap-2 overflow-hidden text-[#7B869C]">
@@ -66,7 +66,7 @@ const Sidebar = ({mdUp, open, handleButtonClick, currentUser}: SidebarProps) => 
                                         href="/mes-offres"
                                         className="relative flex items-center rounded-lg px-2 py-[10px] text-lg font-medium">
                                         <div className="inline-flex flex-shrink px-0 py-1">
-                                            <PiSuitcase className="w-6 h-6 mr-3 group-hover:text-primary-dark-green" />
+                                            <PiFolderUserFill className="w-6 h-6 mr-3 group-hover:text-primary-dark-green" />
                                         </div>
                                         {
                                             open && <span className="whitespace-nowrap group-hover:text-primary-dark-green">
@@ -83,7 +83,7 @@ const Sidebar = ({mdUp, open, handleButtonClick, currentUser}: SidebarProps) => 
                             currentUser?.role === "BUYER" || currentUser?.role === "BOTH" ? (
                                 <li>
                                     <Link 
-                                        href=""
+                                        href="/offres-publiees"
                                         className="relative flex items-center rounded-lg px-2 py-[10px] text-lg font-medium">
                                         <div className="inline-flex flex-shrink px-0 py-1">
                                             <PiSuitcase className="w-6 h-6 mr-3 group-hover:text-primary-dark-green" />
@@ -100,7 +100,7 @@ const Sidebar = ({mdUp, open, handleButtonClick, currentUser}: SidebarProps) => 
                         }
                         
                         
-                        <li>
+                        {/* <li>
                             <Link 
                                 href=""
                                 className="relative flex items-center rounded-lg px-2 py-[10px] text-lg font-medium">
@@ -113,7 +113,7 @@ const Sidebar = ({mdUp, open, handleButtonClick, currentUser}: SidebarProps) => 
                                             </span>
                                 }
                             </Link>
-                        </li>
+                        </li> */}
                         {
                             currentUser?.role === "SELLER" || currentUser?.role === "BOTH" ? (
                                 <li onClick={openEditModal} >

@@ -11,6 +11,7 @@ import { useRouter } from 'next/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import InputModal from '../forms/InputModal';
+import ImageUpload from '../imageUpload/ImageUpload';
 
 interface Props {
     onClose: () => void,
@@ -47,6 +48,14 @@ const EditUserModal = ({onClose, currentUser}: Props) => {
       });
 
       const image = watch("image");
+
+      const setCustomValue = (id: any, value: any) => {
+        setValue(id, value, {
+          shouldDirty: true,
+          shouldTouch: true,
+          shouldValidate: true,
+        });
+      };
 
 
       const handleUpload = (result: any) => {
@@ -87,21 +96,15 @@ const EditUserModal = ({onClose, currentUser}: Props) => {
                 <form className="space-y-8 w-full" onSubmit={handleSubmit(onSubmit)}>
                     <div className="grid gap-y-4 lg:gap-x-6 lg:grid-cols-6">
 
-                        <div className="bg-primary-dark-green p-8 lg:p-0 col-span-3 flex flex-col justify-center items-center rounded-xl">
+                        <div className="lg:p-0 col-span-3 flex flex-col justify-center items-center rounded-xl">
                             
                             {/* on utilise CldUploadButton for l'ajout d'image */}
-                            <CldUploadButton
-                                options={{ maxFiles: 1 }}
-                                onUpload={handleUpload}
-                                uploadPreset="hz53vnpv"
-
-                            >
-                                <label className="cursor-pointer" htmlFor="file">
-                                    <img className="text-center" src="/img/modals/icone-photo.svg" alt="" />
-                                </label>
-                            </CldUploadButton>
+                            <ImageUpload
+                                    onChange={(value) => setCustomValue("image", value)}
+                                    value={image}
+                                />
                             
-                            <span className="text-white font-jost text-center mt-4">Ajouter une photo de profil</span>
+                            
                         </div>
 
                         <div className="col-span-3">

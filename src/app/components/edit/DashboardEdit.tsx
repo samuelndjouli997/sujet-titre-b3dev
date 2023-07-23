@@ -55,7 +55,7 @@ const DashboardEdit = ({currentUser}: DashboardEditProps) => {
         ) : null}
               <div className="mb-20 flex flex-col justify-center items-center">
                 
-                <Image src={currentUser?.image || "/img/placeholder.webp"} className="rounded-full" alt="avatar" width={148} height={148} />
+                <Image src={currentUser?.image || "/img/home/user-img.webp"} className="rounded-full w-[148px] h-[148px] object-cover" alt="avatar" width={148} height={148} />
 
                   <button onClick={openEditModal} className="flex space-x-2 bg-white rounded-full custom-shadow cursor-pointer -mt-4 py-3 px-6">
                       <Image src="/img/home/camera.svg" alt="camera" width={20} height={20} />

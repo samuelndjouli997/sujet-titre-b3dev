@@ -136,7 +136,7 @@ export default function UpdatePostModal({ onClose, post }: UpdatePostModalProps)
                                 />
 
 
-                                <div className="flex space-x-4 lg:space-x-2 justify-start mt-4">
+                                <div className="flex space-x-4 lg:space-x-2 justify-center mt-4">
                                     <button type="submit" className="btn bg-white text-primary-green rounded-xl font-rubik font-medium btn-lg">
                                         Valider la modification
                                     </button>

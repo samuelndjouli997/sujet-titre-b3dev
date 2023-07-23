@@ -39,6 +39,7 @@ export interface InputProps {
     options?: { value: string; label: string }[];
   }
 
+
 export type PostWithUser = Post & {
     user: User;
   };
