@@ -51,6 +51,7 @@ const RegisterForm = () => {
           email: data.email,
           password: data.password,
         });
+        router.refresh();
         router.push('/dashboard');
       }
     };
