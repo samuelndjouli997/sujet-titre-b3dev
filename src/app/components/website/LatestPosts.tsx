@@ -13,6 +13,7 @@ const LatestPosts = () => {
         </div>
       </div>
       
+      
       <div className="grid lg:grid-cols-12 gap-x-8 
       mb-10 lg:mb-16">
         {
