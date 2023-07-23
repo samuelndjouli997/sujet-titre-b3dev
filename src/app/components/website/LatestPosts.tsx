@@ -12,6 +12,7 @@ const LatestPosts = () => {
           <h2 className="section-title text-dark">Découvrez les dernières annonces</h2>
         </div>
       </div>
+      
       <div className="grid lg:grid-cols-12 gap-x-8 
       mb-10 lg:mb-16">
         {
