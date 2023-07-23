@@ -46,10 +46,10 @@ const DashboardEdit = ({currentUser}: DashboardEditProps) => {
   return (
     
     <>
-        <div className="section lg:pt-14 lg:pb-20 flex flex-col w-8/12 mx-auto space-y-4 col-span-3">
+        <div className="section h-screen lg:pt-14 lg:pb-20 flex flex-col w-8/12 mx-auto space-y-4 col-span-3">
         
         {currentUser ? (
-          <h2 className="font-jost font-medium text-lg lg:text-[25px] text-dark mb-4">
+          <h2 className="font-jost font-medium text-lg text-center lg:text-[25px] text-dark mb-4">
             Salut, {currentUser?.name} ! Ici tu pourras consulter et modifier toutes les informations liées à ton profil
           </h2>
         ) : null}
