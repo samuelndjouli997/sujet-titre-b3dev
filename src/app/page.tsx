@@ -1,10 +1,9 @@
-import Image from 'next/image'
 import Header from './components/website/Header'
 import Hero from './components/website/Hero'
 import OurObjectif from './components/website/OurObjectif'
 import About from './components/website/About'
 import LatestPosts from './components/website/LatestPosts'
-import OurServices from './components/website/OurServices'
+import OurValues from './components/website/OurValues'
 import OurVision from './components/website/OurVision'
 import PicturesGrid from './components/website/PicturesGrid'
 import Contact from './components/website/Contact'
@@ -18,7 +17,7 @@ export default function Home() {
       <OurObjectif />
       <About />
       <LatestPosts />
-      <OurServices />
+      <OurValues />
       <OurVision />
       <PicturesGrid />
       <Contact />

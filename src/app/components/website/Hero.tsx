@@ -10,7 +10,7 @@ const Hero = () => {
         </h1>
         
         <div className="mb-4 space-x-0 md:space-x-2 md:mb-8">
-          <Link href="#explainer" className="btn bg-white font-rubik font-medium text-primary-green">En savoir plus</Link>
+          <Link href="#about" className="btn bg-white font-rubik font-medium text-primary-green">En savoir plus</Link>
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import { Services } from '@/types/Index'
+import { Services } from '@/app/types/Index'
 import Image from 'next/image'
 import React from 'react'
 

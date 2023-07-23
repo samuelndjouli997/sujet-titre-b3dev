@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 import { User } from "@prisma/client";
 import useMedia from '@/app/hooks/useMedia';
 import Sidebar from '../home/Sidebar';
-import Dashboard from '../home/Dashboard';
+
 import DashboardEdit from './DashboardEdit';
 
 

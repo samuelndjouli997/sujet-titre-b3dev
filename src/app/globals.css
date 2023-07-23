@@ -11,21 +11,32 @@
     scroll-behavior: smooth;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   .bg-hero {
-    background: linear-gradient(0deg, rgba(15, 66, 41, 0.70) 0%, rgba(15, 66, 41, 0.70) 100%), url('/img/hero/background-hero.png');
+    background: linear-gradient(0deg, rgba(15, 66, 41, 0.70) 0%, rgba(15, 66, 41, 0.70) 100%), url('/img/hero/background-hero.webp');
     background-size: cover;
     background-position: center;
   }
   
   .bg-our-services {
-    background: linear-gradient(0deg, rgba(15, 66, 41, 0.70) 0%, rgba(15, 66, 41, 0.70) 100%), url('/img/ourServices/ourservices-img.png');
+    background: linear-gradient(0deg, rgba(15, 66, 41, 0.70) 0%, rgba(15, 66, 41, 0.70) 100%), url('/img/ourServices/background-ourservices.webp');
     background-size: 100% auto;
     background-position: center;
     background-repeat: no-repeat;
   }
 
+  .bg-our-vision {
+    background-image: url('/img/ourVision/bg-vision-section.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
   .bg-register {
-    background: linear-gradient(42deg, rgba(15, 66, 41, 0.40) 0%, rgba(83, 148, 7, 0.40) 100%), url('/img/register/bg-img-register.jpg');
+    background: linear-gradient(42deg, rgba(15, 66, 41, 0.40) 0%, rgba(83, 148, 7, 0.40) 100%), url('/img/register/background-register.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -35,6 +46,27 @@
     background: url('/img/login/bg-leaf.svg'), url('/img/login/bg-ellipses.svg'),linear-gradient(42deg, #0F4229 0%, #539407 100%);
     background-size: 128px, 200px, cover;
     background-position: center left, bottom left, center;
+    background-repeat: no-repeat;
+  }
+
+  .bg-tips-1 {
+    background-image: url('/img/dashboard/background-tips-1.png');
+    background-size: 180px;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+  }
+
+  .bg-tips-2 {
+    background-image: url('/img/dashboard/background-tips-2.png');
+    background-size: 260px;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+  }
+
+  .bg-tips-3 {
+    background-image: url('/img/dashboard/background-tips-3.png');
+    background-size: 190px;
+    background-position: right bottom;
     background-repeat: no-repeat;
   }
 

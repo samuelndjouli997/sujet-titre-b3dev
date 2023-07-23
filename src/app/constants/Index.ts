@@ -1,9 +1,9 @@
 export const posts = [
     {
       id: 1,
-      userImg: "/img/latestPosts/photo-alain.svg",
+      userImg: "/img/latestPosts/photo-alain.webp",
       user: "Alain",
-      img: "/img/latestPosts/img-post-alain.png",
+      img: "/img/latestPosts/img-post-alain.webp",
       title: "Pot de fleurs",
       price: "15€",
       location: "Meaux, Seine-et-Marne",
@@ -11,9 +11,9 @@ export const posts = [
     },
     {
         id: 2,
-        userImg: "/img/latestPosts/photo-murielle.svg",
+        userImg: "/img/latestPosts/photo-murielle.webp",
         user: "Murielle",
-        img: "/img/latestPosts/img-post-murielle.png",
+        img: "/img/latestPosts/img-post-murielle.webp",
         title: "Panier de légumes",
         price: "55€",
         location: "Dijon, Côte-d'Or",
@@ -21,9 +21,9 @@ export const posts = [
     },
     {
         id: 3,
-        userImg: "/img/latestPosts/photo-thomas.svg",
+        userImg: "/img/latestPosts/photo-thomas.webp",
         user: "Thomas",
-        img: "/img/latestPosts/img-post-thomas.png",
+        img: "/img/latestPosts/img-post-thomas.webp",
         title: "Graines de Tournesol",
         price: "20€",
         location: "Saumur, Maine-et-Loire",
@@ -31,9 +31,9 @@ export const posts = [
     },
     {
         id: 4,
-        userImg: "/img/latestPosts/photo-lucas.svg",
+        userImg: "/img/latestPosts/photo-lucas.webp",
         user: "Lucas",
-        img: "/img/latestPosts/img-post-lucas.png",
+        img: "/img/latestPosts/img-post-lucas.webp",
         title: "Bouquet d’hortensia",
         price: "60€",
         location: "Paris, Paris",
@@ -45,27 +45,27 @@ export const posts = [
 export const services = [
     {
         id: 1,
-        title: "Landscaping",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros quis nisl aliquam aliquet. Sed vitae eros quis nisl aliquam aliquet.",
+        title: "Transparence",
+        description: "La confiance de nos utilisateurs est primordiale, et nous nous engageons à être ouverts et transparents à chaque étape de leur parcours sur notre plateforme.",
         icon: "",
 
     },
     {
         id: 2,
-        title: "Gardening",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros quis nisl aliquam aliquet. Sed vitae eros quis nisl aliquam aliquet.",
+        title: "Écoute",
+        description: "Nous sommes à l'écoute de vos suggestions et de vos avis pour améliorer continuellement notre plateforme et offrir une expérience exceptionnelle à chacun d'entre vous.",
         icon: "",
     },
     {
         id: 3,
-        title: "Garden Design",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros quis nisl aliquam aliquet. Sed vitae eros quis nisl aliquam aliquet.",
+        title: "Réactivité",
+        description: "Notre équipe est dévouée à traiter vos requêtes avec diligence et efficacité, que ce soit pour résoudre un problème technique, ou pour faciliter une mise en relation.",
         icon: "",
     },
     {
         id: 4,
-        title: "Lawn Care",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros quis nisl aliquam aliquet. Sed vitae eros quis nisl aliquam aliquet.",
+        title: "Accompagnement",
+        description: "Que vous soyez un jardinier débutant, un cultivateur aguerri ou un amateur de produits frais, nous sommes là pour vous soutenir et vous guider.",
         icon: "",
     },
 ]

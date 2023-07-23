@@ -63,7 +63,7 @@ const RegisterForm = () => {
                     <Input
                         id="name"
                         type="text"
-                        label="Nom"
+                        // label="Nom"
                         placeholder="Nom"
                         register={register("name")}
                         error={errors.name?.message}
@@ -73,7 +73,7 @@ const RegisterForm = () => {
               <Input
                 id="email"
                 type="email"
-                label="Email"
+                // label="Email"
                 placeholder="Email"
                 register={register("email")}
                 error={errors.email?.message}
@@ -84,7 +84,7 @@ const RegisterForm = () => {
               <Input
                 id="password"
                 type="password"
-                label="Password"
+                // label="Mot de passe"
                 placeholder="Mot de passe"
                 register={register("password")}
                 error={errors.password?.message}
@@ -99,11 +99,11 @@ const RegisterForm = () => {
                   <Input
                     id="role"
                     type="select"
-                    label="Role"
+                    label="Vous êtes ?"
                     options={[
                       { value: "BUYER", label: "Acheteur" },
                       { value: "SELLER", label: "Vendeur" },
-                      { value: "BOTH", label: "Les deux" },
+                      { value: "BOTH", label: "Acheteur & Vendeur 🤩" },
                     ]}
                     {...field}
                     error={errors.role?.message}

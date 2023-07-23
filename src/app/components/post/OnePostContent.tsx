@@ -54,7 +54,17 @@ const OnePostContent = ({post, currentUser}: OnePostContentProps) => {
                                 {post?.title}
                             </h2>
                             <div>
-                                <Image width={400} height={400} className="rounded-2xl w-full object-cover h-[600px]" src={post?.image} alt={post?.title} />
+                                {post?.image ? (
+                                    <Image
+                                    width={400}
+                                    height={400}
+                                    className="rounded-2xl w-full object-cover h-[600px]"
+                                    src={post.image}
+                                    alt={post.title}
+                                    />
+                                ) : (
+                                    <div>No image available</div>
+                                )}
                             </div>
                             <p className="font-rubik text-base text-primary-dark-green my-8">{post?.description}</p>
                         </div>
@@ -67,11 +77,11 @@ const OnePostContent = ({post, currentUser}: OnePostContentProps) => {
                                 currentUser?.email === post?.user?.email ? (
                                     ""
                                 ) : (
-                                    <div className="flex justify-start space-x-2 mb-4">
+                                    <div className="flex justify-start items-center space-x-2 mb-4">
                                         <span className="font-jost font-medium text-lg lg:text-xl text-primary-dark-green">
                                             Par
                                         </span>
-                                        <Image src={post?.user?.image || "/img/home/user-img.webp"} alt="avatar" width={40} height={40} className="rounded-full" />
+                                        <Image src={post?.user?.image || "/img/home/user-img.webp"} alt="avatar" width={40} height={40} className="rounded-full w-10 h-10 object-cover" />
                                         <span className="font-jost font-medium text-lg lg:text-xl text-primary-dark-green">
                                             {post?.user?.name}
                                         </span>
@@ -95,7 +105,7 @@ const OnePostContent = ({post, currentUser}: OnePostContentProps) => {
                                 {
                                     post?.user?.role === "BUYER" || post?.user?.role === "BOTH" || currentUser?.email != post?.user?.email ? (
                                         <Link 
-                                            href={`mailto:${post.user.email}`} 
+                                            href={`mailto:${post?.user.email}`} 
                                             className="flex font-jost font-medium text-lg lg:text-xl text-primary-dark-green my-4">
                                             <a>
                                             Contactez l'acheteur 

@@ -1,4 +1,4 @@
-import { Posts } from '@/types/Index'
+import { Posts } from '@/app/types/Index'
 import Image from 'next/image'
 import React from 'react'
 

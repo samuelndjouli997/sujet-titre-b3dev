@@ -24,9 +24,12 @@ const PublishedOffersCard = ({post, key}: PublishedOffersCardProps) => {
 
         <div className="flex flex-col space-y-4 mt-3 justify-start items-start w-full">
             <div>
+            {post?.image ? (
                 <Link href={`/post/${post?.id}`}>
                     <Image className="rounded-2xl  object-cover h-[252px]" src={post?.image} alt={post?.title} width={294} height={252} />
-                </Link>
+                </Link> ) : (
+                    <div>No image available</div>
+                )}
             </div>
             
             <Link href={`/post/${post?.id}`}>

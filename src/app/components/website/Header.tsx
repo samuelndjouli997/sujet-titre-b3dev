@@ -15,23 +15,23 @@ const Header = () => {
 
 		<ul className="items-stretch hidden space-x-8 font-medium font-rubik text-lg text-dark lg:flex">
 			<li className="flex">
-				<Link href="/">
+				<Link href="#about">
 					À propos
 				</Link>
 			</li>
 			<li className="flex">
-				<Link href="/">
-					Nos services
+				<Link href="#values">
+					Nos valeurs
 				</Link>
 			</li>
 			<li className="flex">
-				<Link href="/">
-					Accomplissements
+				<Link href="#vision">
+					Notre vision
 				</Link>
 			</li>
 			<li className="flex">
-				<Link href="/">
-					Contact
+				<Link href="#clients">
+					Nos clients
 				</Link>
 			</li>
 		</ul>

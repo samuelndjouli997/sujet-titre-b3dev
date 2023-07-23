@@ -55,7 +55,7 @@ const LoginForm = () => {
           <Input
             id="email"
             type="email"
-            label="Email"
+            // label="Email"
             placeholder="Email"
             register={register("email")}
             error={errors.email?.message}
@@ -63,7 +63,7 @@ const LoginForm = () => {
           <Input
             id="password"
             type="password"
-            label="Password"
+            // label="Mot de passe"
             placeholder="Mot de passe"
             register={register("password")}
             error={errors.password?.message}

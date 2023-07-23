@@ -34,9 +34,13 @@ const MyOffersCard = ({key, post}: MyOffersCardProps) => {
 
   return (
     <div className="col-span-4 w-full" key={key}>
+        {post?.image ? (
         <Link href={`/post/${post?.id}`}>
-            <Image className="rounded-2xl w-full object-cover h-[252px]" src={post?.image} alt={post?.title} width={294} height={252} />
+            <Image className="rounded-2xl w-full object-cover h-[252px]" src={post.image} alt={post.title} width={294} height={252} />
         </Link>
+        ) : (
+            <div>No image available</div>
+        )}
         <div className="flex flex-col space-y-4 mt-3 justify-start items-start w-full">
             <div>
                 <Link href={`/post/${post?.id}`}>
