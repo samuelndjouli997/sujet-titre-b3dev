@@ -3,6 +3,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import ToasterContext from './context/ToastContext'
 import ScrollToTopButton from './components/anchor/ScrollToTopButton'
+import Analytics from './analytics'
 
 
 export const metadata: Metadata = {
@@ -64,6 +65,7 @@ export default function RootLayout({
     <html lang="fr">
       <body>
         <AuthContext>
+          <Analytics />
           <ToasterContext />
         {children}
         <ScrollToTopButton />
