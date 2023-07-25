@@ -4,7 +4,7 @@ import React from 'react'
 const Hero = () => {
   return (
     <section className="section bg-hero mx-auto">
-      <div className="pt-[26px] pb-[144px] lg:pt-[106px] lg:pb-[160px] text-center flex flex-col justify-start lg:justify-center lg:items-center space-y-16">
+      <div className="pt-[96px] pb-[144px] lg:pt-[106px] lg:pb-[160px] text-center flex flex-col justify-start lg:justify-center lg:items-center space-y-16">
         <h1 className="hero-title mt-12 lg:mt-8 max-w-[297px] lg:max-w-[950px]">
             Cultivez votre passion, partagez votre jardin.
         </h1>

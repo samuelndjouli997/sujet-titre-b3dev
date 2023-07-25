@@ -131,11 +131,19 @@ const Header = () => {
 								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" className="w-8 h-8">
 									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M6 18L18 6M6 6l12 12"></path>
 								</svg>
-								</button>
+							</button>
+
+							
 							
 							<nav className="flex flex-col justify-between items-center mt-16">
 
-							<ul className="flex flex-col justify-center items-center space-y-4 mt-20">
+							<div className="mt-10 flex flex-col justify-center items-center">
+								<Link href="/">
+									<Image src="/img/header/main-logo-white.svg" alt="logo" width={200} height={100} />
+								</Link>
+							</div>
+
+							<ul className="flex flex-col justify-center items-center space-y-4 mt-12">
 								<li>
 								<Link href="#about" onClick={closeMenu} className="font-jost text-white text-[28px] tracking-[2%]" >À propos</Link>
 								</li>

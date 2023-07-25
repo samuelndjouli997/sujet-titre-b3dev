@@ -19,9 +19,9 @@ const page = () => {
         </div>
 
         {/* 2eme colonne */}
-        <div className="py-16 px-8 lg:py-32 lg:w-[50% flex flex-col justify-center">
+        <div className="pt-32 pb-16 px-8 lg:py-32 lg:w-[50% flex flex-col justify-center">
           <div className="flex flex-col justify-center w-full lg:w-[90%] mx-auto">
-            <h3 className="font-jost font-semibold text-[18px] lg:text-4xl text-primary-dark-green mb-8">Je m'inscris avec :</h3>
+            {/* <h3 className="font-jost font-semibold text-[18px] lg:text-4xl text-primary-dark-green mb-8">Je m'inscris avec :</h3>
             <button className="flex justify-between space-x-4 p-4 bg-primary-light-green w-full rounded-xl mb-4 cursor-pointer">
               <img src="/img/auth/google.svg" alt="google" className="w-7" />
               <span className="font-rubik font-light text-[18px] lg:text-[16px] text-primary-dark-green">S’inscrire avec Google</span>
@@ -32,7 +32,7 @@ const page = () => {
               <div className="border-t-2 border-primary-dark-green flex-grow"></div>
               <span className="font-jost font-semibold text-[16px] text-primary-dark-green mx-4">Ou</span>
               <div className="border-t-2 border-primary-dark-green flex-grow"></div>
-            </div>
+            </div> */}
 
             <h3 className="font-jost font-semibold text-[18px] lg:text-4xl text-primary-dark-green mb-8">Je m'inscris avec :</h3>
 

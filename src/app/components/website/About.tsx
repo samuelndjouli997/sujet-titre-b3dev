@@ -24,7 +24,7 @@ const About = () => {
             </div>
 
             <div className="lg:col-span-3 hidden lg:block">
-              <img src="/img/about/about-section.webp" alt="" />
+              <img src="/img/about/about-section.webp" alt="A propos de nous" />
             </div>  
 
           </div>
