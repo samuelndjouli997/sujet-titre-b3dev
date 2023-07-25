@@ -31,7 +31,6 @@ export default function CreatePostModal({onClose}: CreatePostModalProps) {
           title: "",
           description: "",
           category: "",
-          productType: "",
           image: "",
           location: "",
         },
@@ -112,7 +111,7 @@ export default function CreatePostModal({onClose}: CreatePostModalProps) {
                                 label="Localisation de l'annonce"
                                 placeholder="exemple : Dijon, Côte d'Or"
                                 register={register("location", { required: true })}
-                                error={errors.description && "Description requise"}
+                                error={errors.location && "Localisation requise"}
                             />
 
                             <InputModal
@@ -121,7 +120,7 @@ export default function CreatePostModal({onClose}: CreatePostModalProps) {
                                 label="Catégorie de produit"
                                 placeholder="Catégorie"
                                 register={register("category", { required: true })}
-                                error={errors.productType && "Catégorie de produit requise"}
+                                error={errors.category && "Catégorie de produit requise"}
                             />
 
                             <InputModal
